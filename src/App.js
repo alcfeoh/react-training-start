@@ -1,18 +1,28 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-      </header>
-    </div>
-  );
-}
+class App extends React.Component {
+	constructor() {
+		super();
+		this.name = 'React';
+	}
+
+	render() {
+		return (
+			<div className="App">
+			<header className="App-header">
+			</header>
+		            	{/* Add Navigation here */}
+				<main role="main">
+				{/* Add Jumbotron here */}
+				{/* License plates go here */}
+				<p>
+				Hello {this.name}
+				</p>
+				</main>
+			</div>
+		);
+	}
+};
 
 export default App;
