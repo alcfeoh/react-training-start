@@ -1,7 +1,7 @@
 import React from 'react';
-import './Popup.css';
+import './PopupWindowComponent.css';
 
-class Popup extends React.Component {
+class PopupWindowComponent extends React.Component {
 
 	render() {
 		if (!this.props.show) {
@@ -25,4 +25,4 @@ class Popup extends React.Component {
 	}
 }
 
-export default Popup;
+export default PopupWindowComponent;
