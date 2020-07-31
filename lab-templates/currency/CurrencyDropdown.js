@@ -11,15 +11,12 @@ class CurrencyDropdown extends React.Component {
     }
 	render() {
 		return (
-			<div class="btn-group margin10">
-				<button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown"
-					onClick={() => {
-						this.setState({showItems : !this.state.showItems})
-					}}>{this.state.currency}</button>
-				<div class={this.state.showItems? "dropdown-menu show" : "dropdown-menu"}>
-				<a class="dropdown-item" onClick={()=>this.setState({currency: 'USD', showItems : false})}>USD ($)</a>
-				<a class="dropdown-item" onClick={()=>this.setState({currency: 'EUR', showItems : false})}>EUR (€)</a>
-				<a class="dropdown-item" onClick={()=>this.setState({currency: 'GBP', showItems : false})}>GBP (£)</a>
+			<div className="btn-group margin10">
+				<button type="button" className="btn btn-info dropdown-toggle" data-toggle="dropdown">{this.state.currency}</button>
+				<div className={this.state.showItems? "dropdown-menu show" : "dropdown-menu"}>
+				<a className="dropdown-item">USD ($)</a>
+				<a className="dropdown-item">EUR (€)</a>
+				<a className="dropdown-item">GBP (£)</a>
 				</div>
 			</div>
 		);
