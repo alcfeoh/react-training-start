@@ -3,7 +3,7 @@ const img = require("../assets/card-types/mastercard.png");
 class CheckoutFormComponent extends React.Component {
 	render() {
 		return (
-<div id="checkoutForm">
+<form id="checkoutForm">
   <div className="row">
     <div className="col-lg-6">
         <div className="input-group">
@@ -55,7 +55,7 @@ class CheckoutFormComponent extends React.Component {
   </div>
   <br/>
   <button type="submit" className="btn btn-primary">Submit</button>
-</div>
+</form>
 
 		);
 	}
