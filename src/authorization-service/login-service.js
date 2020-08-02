@@ -1,11 +1,7 @@
 const BASE_URL = 'http://localhost:8000';
 
-export async function login(username, password) {
-	const data = { "username" : username, "password" : password};
-	let output = {};
-	await fetch(BASE_URL + '/login', {method: 'PUT', body: JSON.stringify(data)})
-		.then(response => response.json())
-		.then(data => { output = data; });
+export function login(username, password) {
+	return fetch(BASE_URL + '/login', {method: 'PUT', body: JSON.stringify({ username, password})})
+		.then(response => response.json());
 	// Example: {token: "1abcd21atsampletoken21"}
-	return output;
 }

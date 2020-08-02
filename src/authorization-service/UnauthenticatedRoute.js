@@ -1,7 +1,8 @@
 import React from "react";
 import { Route, Redirect } from "react-router-dom";
 
-export default class UnauthenticatedRoute extends React.Component {
+export class UnauthenticatedRoute extends React.Component {
+
 	constructor(props) {
 		super(props);
 		// See App.js to see what to expect here.
@@ -12,7 +13,7 @@ export default class UnauthenticatedRoute extends React.Component {
 		let { children, ...rest } = this.props;
 		let { location } = rest;
 		let { search } = location;
-		let isAuthenticated = children && children.props && children.props.isAuthenticated;
+		let isAuthenticated = children?.props?.isAuthenticated;
 		if (search) {
 			search = search.replace("?redirect=/", "");
 		}

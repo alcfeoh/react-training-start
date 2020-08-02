@@ -7,10 +7,10 @@ export class CheckoutViewComponent extends React.Component {
 	render() {
 		return (
 			<>
-			<Jumbotron title="Checkout" description="Enter your personal information to complete your order"/>
-			<div className="container">
-			<CheckoutFormComponent></CheckoutFormComponent>
-			</div>
+				<Jumbotron title="Checkout" description="Enter your personal information to complete your order"/>
+				<div className="container">
+					<CheckoutFormComponent></CheckoutFormComponent>
+				</div>
 			</>
 		);
 	}
