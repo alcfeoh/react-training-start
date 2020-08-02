@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 
 class App extends React.Component {
+	
 	constructor() {
 		super();
 		this.name = 'React';
@@ -12,13 +13,13 @@ class App extends React.Component {
 			<div className="App">
 			<header className="App-header">
 			</header>
-		            	{/* Add Navigation here */}
+				{/* Add Navigation here */}
 				<main role="main">
 				{/* Add Jumbotron here */}
 				{/* License plates go here */}
-				<p>
+				<h1>
 				Hello {this.name}
-				</p>
+				</h1>
 				</main>
 			</div>
 		);

@@ -3,7 +3,9 @@ import LicensePlateComponent from '../LicensePlateComponent';
 import JumbotronTemplate from '../jumbotron/JumbotronTemplate';
 import {getCartContents} from '../cart-service/cart-service';
 import {removeFromCart} from '../cart-service/cart-service';
+
 class CartViewComponent extends React.Component {
+
 	constructor(props) {
 		super(props);
         this.state = {
