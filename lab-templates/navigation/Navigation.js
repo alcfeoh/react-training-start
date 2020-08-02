@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 
-class NavTemplate extends React.Component {
+class Navigation extends React.Component {
 	render() {
 		return (
 			<Fragment>
@@ -34,4 +34,4 @@ class NavTemplate extends React.Component {
 	}
 }
 
-export default NavTemplate;
+export default Navigation;
