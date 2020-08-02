@@ -1,10 +1,10 @@
 import React from 'react';
-import LicensePlateComponent from '../LicensePlateComponent';
-import JumbotronTemplate from '../jumbotron/JumbotronTemplate';
+import {LicensePlateComponent} from '../LicensePlateComponent';
+import {Jumbotron} from '../jumbotron/Jumbotron';
 import {getCartContents} from '../cart-service/cart-service';
 import {removeFromCart} from '../cart-service/cart-service';
 
-class CartViewComponent extends React.Component {
+export class CartViewComponent extends React.Component {
 
 	constructor(props) {
 		super(props);
@@ -41,7 +41,7 @@ class CartViewComponent extends React.Component {
 		}
 		return (
 			<>
-			<JumbotronTemplate title="My Cart" description="Your current cart contents:"/>
+			<Jumbotron title="My Cart" description="Your current cart contents:"/>
 			<div className="container">
 			{rows && rows.length === 0 && <div className="alert alert-info" role="alert">Your cart is empty</div>}
 				<div className="row" >
@@ -54,4 +54,3 @@ class CartViewComponent extends React.Component {
 	}
 };
 
-export default CartViewComponent;

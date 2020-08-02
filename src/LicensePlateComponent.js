@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import './LicensePlateComponent.css';
 
-class LicensePlateComponent extends Component {
+export class LicensePlateComponent extends Component {
 
 	render() {
 		const plate = this.props.plate ? this.props.plate : {};
@@ -20,6 +20,4 @@ class LicensePlateComponent extends Component {
 		);
 	}
 
-};
-
-export default LicensePlateComponent;
+}
