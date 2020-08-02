@@ -1,5 +1,5 @@
 import React from 'react';
-import {LicensePlateComponent} from '../LicensePlateComponent';
+import {LicensePlateComponent} from '../license-plate/LicensePlateComponent';
 import {Jumbotron} from '../jumbotron/Jumbotron';
 import {getCartContents} from '../cart-service/cart-service';
 import {removeFromCart} from '../cart-service/cart-service';
