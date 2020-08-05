@@ -13,3 +13,7 @@
 .App-link {
   color: #61dafb;
 }
+
+.jumbotron > .container {
+  text-align: left;
+}
