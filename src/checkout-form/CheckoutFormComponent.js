@@ -2,18 +2,35 @@ import React from 'react';
 
 export class CheckoutFormComponent extends React.Component {
 
-	render() {
+    state = {
+        "firstname": {"value" : ''},
+        "lastname": {"value" : ''},
+        "street": {"value" : ''},
+        "city": {"value" : ''},
+        "zip": {"value" : '', "valid" : false},
+        "state": {"value" : ''},
+        "cc": {"value" : ''}
+    };
+
+    handleChange = (event) => {
+        const {name, value} = event.target;
+        this.setState({[name]: {value} });
+    };
+
+    render() {
 		return (
             <form id="checkoutForm">
               <div className="row">
                 <div className="col-lg-6">
                     <div className="input-group">
-                      <input type="text" className="form-control" placeholder="Firstname" name="firstname" required/>
+                      <input type="text" className="form-control" placeholder="First name" name="firstname"
+                             required value={this.state.firstname.value} onChange={this.handleChange}/>
                     </div>
                 </div>
                 <div className="col-lg-6">
                   <div className="input-group">
-                    <input type="text" className="form-control" placeholder="Lastname" name="lastname" required/>
+                    <input type="text" className="form-control" placeholder="Last name" name="lastname"
+                           required value={this.state.lastname.value} onChange={this.handleChange}/>
                   </div>
                 </div>
               </div>
@@ -48,7 +65,6 @@ export class CheckoutFormComponent extends React.Component {
                 <div className="col-lg-6">
                   <div className="input-group">
                     <input type="password" className="form-control" placeholder="Credit card number" name="cc" required/>
-                    <span className="input-group-addon" ><img src='./card-types/mastercard.png'/></span>
                   </div>
                 </div>
                 <div className="col-lg-6">
