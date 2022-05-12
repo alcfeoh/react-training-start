@@ -19,7 +19,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "server":  "node node_modules/lp-store-server",
-    "cleanup": "git clean -fd && git reset --hard",,
+    "cleanup": "git clean -fd && git reset --hard",
   },
   "eslintConfig": {
     "extends": "react-app"
