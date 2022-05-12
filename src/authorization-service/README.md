@@ -2,7 +2,7 @@
 
 Want to use these components to guard certain routes?
 
-Here is an example that you might use in `App.js`:
+Here is an example that you might use in `App.tsx`:
 
 ```
 <UnauthenticatedRoute path="/login">

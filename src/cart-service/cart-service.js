@@ -1,5 +1,6 @@
 const BASE_URL = 'http://localhost:8000';
 
+
 export function addToCart(plate) {
 	fetch(BASE_URL + '/cart/' + plate._id, {method: 'PUT'})
 	.then(response => response.json())
