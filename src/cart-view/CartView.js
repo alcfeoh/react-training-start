@@ -1,26 +1,22 @@
 import React from 'react';
-import {LicensePlateComponent} from '../license-plate/LicensePlateComponent';
+import {LicensePlate} from '../license-plate/LicensePlate';
 import {Jumbotron} from '../jumbotron/Jumbotron';
 import {getCartContents} from '../cart-service/cart-service';
 import {removeFromCart} from '../cart-service/cart-service';
 
-export class CartViewComponent extends React.Component {
+export class CartView extends React.Component {
 
-	constructor(props) {
-		super(props);
-        this.state = {
-            cartContents: []
-		};
-		this.removeItemFromCart = this.removeItemFromCart.bind(this);
-	}
+	state = {
+		cartContents: []
+	};
 
 	async componentDidMount() {
 		let cartContents = await getCartContents();
 		this.setState({cartContents : cartContents});
 	}
 
-	async removeItemFromCart(plate) {
-		await removeFromCart(plate);
+	 removeItemFromCart = (plate) => {
+		removeFromCart(plate);
 		let newCartContents = this.state.cartContents.filter((item) => item._id !== plate._id);
 		this.setState({cartContents : newCartContents});
 	}
@@ -31,8 +27,8 @@ export class CartViewComponent extends React.Component {
 			rows = this.state.cartContents.map((licensePlate, index) => {
 				return (
 					<div key={licensePlate._id} className="col-md-4" style={{backgroundColor: (index % 2 === 0) ? '#F5F5F5' : ''}}>
-						<LicensePlateComponent currency={this.props.currency} plate={licensePlate} buttonText="Remove from cart &times;"
-						buttonClicked={this.removeItemFromCart} />
+						<LicensePlate currency={this.props.currency} plate={licensePlate} buttonText="Remove from cart &times;"
+                                      buttonClicked={this.removeItemFromCart} />
 					</div>
 				);
 			});

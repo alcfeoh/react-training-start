@@ -1,6 +1,6 @@
 import React from 'react';
 
-export class CheckoutFormComponent extends React.Component {
+export class CheckoutForm extends React.Component {
 
     state = {
         "firstname": {"value" : ''},

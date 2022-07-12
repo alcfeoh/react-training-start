@@ -11,7 +11,7 @@ export class AuthenticatedRoute extends React.Component {
 		super(props);
 		// See App.js to see what to expect here.
 		// For AuthenticatedRoute, props is {path: "/checkout",...
-		// and "children" (the child component, CheckoutViewComponent)
+		// and "children" (the child component, CheckoutView)
 	}
 
 	render() {

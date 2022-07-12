@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
-import './LicensePlateComponent.css';
+import './LicensePlate.css';
 
-export class LicensePlateComponent extends Component {
+export class LicensePlate extends Component {
 
 	render() {
-		const plate = this.props.plate ? this.props.plate : {};
+		const plate = this.props.plate;
 		return (
 			<>
 			<h2>{plate.title}</h2>

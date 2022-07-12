@@ -7,7 +7,7 @@ export class UnauthenticatedRoute extends React.Component {
 		super(props);
 		// See App.js to see what to expect here.
 		// For UnauthenticatedRoute, props is {path: "/login", "location":{"pathname":"/login","search":"?redirect=/checkout"...
-		// and "children" (the child component, CheckoutViewComponent)
+		// and "children" (the child component, CheckoutView)
 	}
 	render() {
 		let { children, ...rest } = this.props;

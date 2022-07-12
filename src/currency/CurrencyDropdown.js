@@ -1,14 +1,13 @@
 import React from 'react';
 import './CurrencyDropdown.css';
 
-class CurrencyDropdown extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-			showItems: false,
-			currency: 'USD'
-		};
-    }
+export class CurrencyDropdown extends React.Component {
+
+	state = {
+		showItems: false,
+		currency: 'USD'
+	};
+
 	render() {
 		return (
 			<div className="btn-group margin10">
@@ -31,5 +30,3 @@ class CurrencyDropdown extends React.Component {
 		);
 	}
 };
-	
-export default CurrencyDropdown;

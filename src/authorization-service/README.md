@@ -8,9 +8,9 @@ Here is an example that you might use in `App.js`:
 <UnauthenticatedRoute path="/login">
 		<LoginComponent setIsAuthenticated={this.setIsUserLoggedIn} isAuthenticated={this.state.isUserLoggedIn}/>
 </UnauthenticatedRoute>
-<Route path={"/cart"} component={CartViewComponent} />
+<Route path={"/cart"} component={CartView} />
 <UnauthenticatedRoute path={"/checkout"}>
-		<CheckoutViewComponent isAuthenticated={this.state.isUserLoggedIn}/>
+		<CheckoutView isAuthenticated={this.state.isUserLoggedIn}/>
 </UnauthenticatedRoute>
 <Route path={"/login"}>
 		<LoginComponent setIsAuthenticated={this.setIsUserLoggedIn} isAuthenticated={this.state.isUserLoggedIn}/>
