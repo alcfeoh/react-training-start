@@ -3,18 +3,19 @@ import React from 'react';
 export class CheckoutForm extends React.Component {
 
     state = {
-        "firstname": {"value" : ''},
-        "lastname": {"value" : ''},
-        "street": {"value" : ''},
-        "city": {"value" : ''},
-        "zip": {"value" : '', "valid" : false},
-        "state": {"value" : ''},
-        "cc": {"value" : ''}
+        "firstname": '',
+        "lastname": '',
+        "street": '',
+        "city": '',
+        "zip": '',
+        "zipValid": false,
+        "state": '',
+        "cc": ''
     };
 
     handleChange = (event) => {
         const {name, value} = event.target;
-        this.setState({[name]: {value} });
+        this.setState({[name]: value });
     };
 
     render() {
@@ -24,13 +25,13 @@ export class CheckoutForm extends React.Component {
                 <div className="col-lg-6">
                     <div className="input-group">
                       <input type="text" className="form-control" placeholder="First name" name="firstname"
-                             required value={this.state.firstname.value} onChange={this.handleChange}/>
+                             required value={this.state.firstname} onChange={this.handleChange}/>
                     </div>
                 </div>
                 <div className="col-lg-6">
                   <div className="input-group">
                     <input type="text" className="form-control" placeholder="Last name" name="lastname"
-                           required value={this.state.lastname.value} onChange={this.handleChange}/>
+                           required value={this.state.lastname} onChange={this.handleChange}/>
                   </div>
                 </div>
               </div>
