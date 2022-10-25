@@ -1,4 +1,4 @@
-export interface LicensePlate {
+export interface LicensePlateData {
     _id: string;
     onSale: boolean;
     picture: string;
