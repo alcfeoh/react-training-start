@@ -8,3 +8,6 @@ export interface LicensePlateData {
     state: string;
     description: string;
 }
+
+
+export type Currency = "USD" | "EUR" | "GBP";
