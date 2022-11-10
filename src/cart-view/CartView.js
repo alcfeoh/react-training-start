@@ -16,9 +16,7 @@ export class CartView extends React.Component {
 	}
 
 	 removeItemFromCart = (plate) => {
-		removeFromCart(plate);
-		let newCartContents = this.state.cartContents.filter((item) => item._id !== plate._id);
-		this.setState({cartContents : newCartContents});
+		// TODO
 	}
 
 	render() {
@@ -27,8 +25,7 @@ export class CartView extends React.Component {
 			rows = this.state.cartContents.map((licensePlate, index) => {
 				return (
 					<div key={licensePlate._id} className="col-md-4" style={{backgroundColor: (index % 2 === 0) ? '#F5F5F5' : ''}}>
-						<LicensePlate currency={this.props.currency} plate={licensePlate} buttonText="Remove from cart &times;"
-                                      buttonClicked={this.removeItemFromCart} />
+						<LicensePlate currency={this.props.currency} plate={licensePlate} buttonText="Remove from cart &times;" />
 					</div>
 				);
 			});
