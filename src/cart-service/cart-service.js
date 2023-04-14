@@ -5,7 +5,7 @@ export function addToCart(plate) {
 	.then(response => response.json());
 }
 
-export function getCartContents(plate) {
+export function getCartContents() {
 	return fetch(BASE_URL + '/cart', {method: 'GET'})
 	.then(response => response.json());
 };
