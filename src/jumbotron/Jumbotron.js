@@ -1,13 +1,13 @@
 import React from "react";
 
-export class Jumbotron extends React.Component  {
+export function Jumbotron() {
 
-    render() {
-        return <div className="jumbotron">
+    return (
+        <div className="jumbotron">
             <div className="container">
                 <h1 className="display-3">Title</h1>
                 <p>Description</p>
             </div>
-        </div>;
-    }
+        </div>
+    );
 }
