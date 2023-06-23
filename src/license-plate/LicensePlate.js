@@ -18,6 +18,4 @@ export function LicensePlate(props) {
 				</div>
 			</>
 		);
-	}
-
 }
