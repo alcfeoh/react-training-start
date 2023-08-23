@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 
-function CheckoutForm() {
+export function CheckoutForm() {
 
     const [firstname, setFirstname] = useState('');
     const [lastname, setLastname] = useState('');
@@ -22,13 +22,13 @@ function CheckoutForm() {
             <div className="col-lg-6">
                 <div className="input-group">
                   <input type="text" className="form-control" placeholder="First name" name="firstname"
-                         required value={firstname} onChange={e => e.handleChange(e, setFirstname)}/>
+                         required value={firstname} onChange={e => handleChange(e, setFirstname)}/>
                 </div>
             </div>
             <div className="col-lg-6">
               <div className="input-group">
                 <input type="text" className="form-control" placeholder="Last name" name="lastname"
-                       required value={lastname} onChange={e => e.handleChange(e, setLastname)}/>
+                       required value={lastname} onChange={e => handleChange(e, setLastname)}/>
               </div>
             </div>
           </div>
