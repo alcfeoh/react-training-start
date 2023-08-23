@@ -6,7 +6,7 @@ export function CheckoutForm() {
     const [lastname, setLastname] = useState('');
     const [street, setStreet] = useState('');
     const [city, setCity] = useState('');
-    const [zio, setZip] = useState('');
+    const [zip, setZip] = useState('');
     const [zipValid, setZipValid] = useState(false);
     const [state, setState] = useState('');
     const [cc, setCc] = useState('');
