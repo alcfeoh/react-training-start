@@ -1,10 +1,9 @@
 import React from 'react';
 import './PopupWindow.css';
 
-export class PopupWindow extends React.Component {
+export function PopupWindow(props) {
 
-	render() {
-		if (!this.props.show) {
+		if (!props.show) {
 			return null;
 		}
 		return (
@@ -13,14 +12,15 @@ export class PopupWindow extends React.Component {
 				<table width="100%">
 					<tbody>
 						<tr>
-							<td className="alignLeft" width="98%">Item added to cart</td>
-							<td className="alignRight" onClick={() => { this.props.onClose(); } }><sup>&#10005;</sup></td>
+							<td className="alignLeft" width="98%">{props.title}</td>
+							<td className="alignRight" onClick={() => { props.onClose(); } }><sup>&#10005;</sup></td>
 						</tr>
 					</tbody>
 				</table>
 				</div>
-				<div className="overlay-content alignLeft">Thanks for shopping with us!</div>
+				<div className="overlay-content alignLeft">
+					{props.children}
+				</div>
 			</div>
 		);
-	}
 }
