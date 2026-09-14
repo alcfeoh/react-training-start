@@ -16,7 +16,7 @@ export function App() {
 }
 ```
 
-Then `npm run start` and type in the search box. It stutters.
+Then `npm run dev` (or `npm start`) and type in the search box. It stutters.
 
 ## The challenge
 
@@ -27,9 +27,9 @@ Then `npm run start` and type in the search box. It stutters.
 3. Fix it, then record again and compare the commit durations.
 
 **BONUS:** turn the React Compiler on and delete the manual memoization you
-just added. Note that this repo is still on React 18.2, so the compiler needs
-the `react-compiler-runtime` package alongside the Babel plugin - worth a
-5-minute demo rather than a hands-on step unless the repo moves to React 19.
+just added. This repo is on React 19, so the compiler does not need a
+separate `react-compiler-runtime` package — enable `babel-plugin-react-compiler`
+through `@vitejs/plugin-react` if you want a 5-minute demo.
 
 ## What is actually wrong (trainer notes)
 

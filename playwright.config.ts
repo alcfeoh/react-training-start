@@ -5,7 +5,7 @@ import { defineConfig, devices } from '@playwright/test';
  *
  * Two servers are started automatically before the tests run:
  *  - the license plate API (npm run server) on port 8000
- *  - the React dev server (npm start) on port 3000
+ *  - the React Vite dev server (npm start / npm run dev) on port 3000
  */
 export default defineConfig({
   testDir: './e2e',
