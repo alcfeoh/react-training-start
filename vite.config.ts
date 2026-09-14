@@ -1,6 +1,7 @@
 import { transformWithOxc } from 'vite';
 import { defineConfig } from 'vitest/config';
 import react from '@vitejs/plugin-react';
+import checker from 'vite-plugin-checker';
 
 /**
  * CRA compiled JSX inside .js files. Vite 8's oxc pipeline infers `lang` from
@@ -25,7 +26,7 @@ function jsxInJs() {
 }
 
 export default defineConfig({
-  plugins: [jsxInJs(), react()],
+  plugins: [jsxInJs(), react(), checker({ typescript: true })],
   server: {
     port: 3000,
     strictPort: true,

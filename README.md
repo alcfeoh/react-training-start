@@ -29,4 +29,4 @@ This starter is a Vite + React 19 TypeScript app with `strict` enabled.
 
 - **`.tsx` required props are checked.** If a TypeScript component declares required props and another `.tsx` file omits them, `npm run typecheck` and `npm run build` fail. `skipLibCheck` and `allowJs` do not turn that off.
 - **`.js` lab files are not type-checked.** `allowJs` is on so labs can stay `.js` without renaming. `checkJs` is off, so an untyped `.js` component (for example `LicensePlate.js`) will not report missing props when you call it from TypeScript.
-- **Vite does not type-check.** `npm start` / `npm run dev` compile with Vite and will run even when TypeScript would error. Use the editor's TypeScript errors, `npm run typecheck`, or `npm run build`.
+- **Vite overlay.** `npm start` / `npm run dev` use `vite-plugin-checker` so missing required props also show in the terminal and the browser overlay.
