@@ -18,6 +18,7 @@
     "preview": "vite preview",
     "test": "vitest run",
     "test:watch": "vitest",
+    "test:ci": "vitest run --exclude src/jumbotron/Jumbotron.test.js",
     "typecheck": "tsc --noEmit && tsc --noEmit -p tsconfig.node.json",
     "server": "node node_modules/lp-store-server",
     "cleanup": "git clean -fd && git reset --hard",
