@@ -13,10 +13,15 @@ See [React Training set-up document](https://bit.ly/at-react-setup) for instruct
 | `npm run preview` | Preview the production build |
 | `npm test` | Run unit tests once (Vitest) |
 | `npm run test:watch` | Run unit tests in watch mode |
+| `npm run test:ci` | Same as `npm test`, excluding `Jumbotron.test.js` (used by GitHub Actions) |
 | `npm run typecheck` | Run the TypeScript checker |
 | `npm run server` | Start the license plate API on port 8000 |
 | `npm run e2e` | Run Playwright end-to-end tests |
 | `npm run e2e:ui` | Open the Playwright UI |
+
+## CI
+
+Pull requests and pushes to `master` run GitHub Actions: `npm ci`, typecheck, production build, and `npm run test:ci`. Playwright e2e is not part of CI. `Jumbotron.test.js` is excluded because it is an intentional TDD lab that fails on a fresh clone.
 
 ## TypeScript
 
