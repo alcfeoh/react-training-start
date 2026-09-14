@@ -17,3 +17,7 @@ See [React Training set-up document](https://bit.ly/at-react-setup) for instruct
 | `npm run server` | Start the license plate API on port 8000 |
 | `npm run e2e` | Run Playwright end-to-end tests |
 | `npm run e2e:ui` | Open the Playwright UI |
+
+## TypeScript
+
+This starter is a Vite + React 19 TypeScript app. `allowJs` is enabled, so lab files can stay as `.js` — you do not need to rename them to `.ts` / `.tsx`. Mix JavaScript and TypeScript as you like; `npm run typecheck` checks the TypeScript.

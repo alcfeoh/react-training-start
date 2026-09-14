@@ -18,7 +18,7 @@
     "preview": "vite preview",
     "test": "vitest run",
     "test:watch": "vitest",
-    "typecheck": "tsc --noEmit",
+    "typecheck": "tsc --noEmit && tsc --noEmit -p tsconfig.node.json",
     "server": "node node_modules/lp-store-server",
     "cleanup": "git clean -fd && git reset --hard",
     "e2e": "playwright test",
