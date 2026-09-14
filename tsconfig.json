@@ -15,7 +15,9 @@
     "jsx": "react-jsx",
     "resolveJsonModule": true,
 
-    /* Mixed JS/TS labs: keep .js exercise files working */
+    /* Mixed JS/TS labs: keep .js exercise files working.
+       allowJs does not weaken prop checking for .tsx files.
+       checkJs is intentionally off so incomplete JS labs do not fail typecheck. */
     "allowJs": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
