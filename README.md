@@ -9,7 +9,7 @@ See [React Training set-up document](https://bit.ly/at-react-setup) for instruct
 | `npm install` | Install dependencies |
 | `npm run dev` | Start the Vite dev server at http://localhost:3000 |
 | `npm start` | Same as `npm run dev` (kept for existing lab instructions) |
-| `npm run build` | Create a production build |
+| `npm run build` | Typecheck, then create a production build |
 | `npm run preview` | Preview the production build |
 | `npm test` | Run unit tests once (Vitest) |
 | `npm run test:watch` | Run unit tests in watch mode |
@@ -25,4 +25,8 @@ Pull requests and pushes to `master` run GitHub Actions: `npm ci`, typecheck, pr
 
 ## TypeScript
 
-This starter is a Vite + React 19 TypeScript app. `allowJs` is enabled, so lab files can stay as `.js` — you do not need to rename them to `.ts` / `.tsx`. Mix JavaScript and TypeScript as you like; `npm run typecheck` checks the TypeScript.
+This starter is a Vite + React 19 TypeScript app with `strict` enabled.
+
+- **`.tsx` required props are checked.** If a TypeScript component declares required props and another `.tsx` file omits them, `npm run typecheck` and `npm run build` fail. `skipLibCheck` and `allowJs` do not turn that off.
+- **`.js` lab files are not type-checked.** `allowJs` is on so labs can stay `.js` without renaming. `checkJs` is off, so an untyped `.js` component (for example `LicensePlate.js`) will not report missing props when you call it from TypeScript.
+- **Vite overlay.** `npm start` / `npm run dev` use `vite-plugin-checker` so missing required props also show in the terminal and the browser overlay.
