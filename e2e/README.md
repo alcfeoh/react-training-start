@@ -20,7 +20,7 @@ npm run e2e:ui      # the time-travel debugger, one step at a time
 ```
 
 Both commands start the two servers for you — the license plate API on port
-8000 and the React dev server on port 3000 — see `playwright.config.ts`.
+8000 and the Vite dev server on port 3000 — see `playwright.config.ts`.
 Nothing to start by hand.
 
 ## What is in this folder
