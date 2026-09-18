@@ -7,7 +7,7 @@ export function CheckoutForm() {
     const [street, setStreet] = useState('');
     const [city, setCity] = useState('');
     const [zip, setZip] = useState('');
-    const [zipValid, setZipValid] = useState(false);
+    const [zipValid, setZipValid] = useState(true);
     const [state, setState] = useState('');
     const [cc, setCc] = useState('');
 
@@ -16,8 +16,26 @@ export function CheckoutForm() {
         setter(value);
     };
 
+    const checkZipCodeValidity = (event) => {
+        handleChange(event, setZip);
+        if (event.target.validationMessage !== "") {
+            setZipValid(false);
+        } else {
+            setZipValid(true);
+        }
+    };
+
+    const onSubmit = (event) => {
+        event.preventDefault();
+        fetch('http://localhost:8000/checkout', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({firstname, lastname, street, city, zip, state, cc})
+        });
+    };
+
     return (
-        <form id="checkoutForm">
+        <form id="checkoutForm" onSubmit={onSubmit}>
           <div className="row">
             <div className="col-lg-6">
                 <div className="input-group">
@@ -36,12 +54,33 @@ export function CheckoutForm() {
           <div className="row">
             <div className="col-lg-6">
               <div className="input-group">
-                <input type="text" className="form-control" placeholder="Street" name="street"/>
+                <input type="text" className="form-control" placeholder="Street" name="street"
+                       required value={street} onChange={e => handleChange(e, setStreet)}/>
               </div>
             </div>
             <div className="col-lg-6">
               <div className="input-group">
-                <input type="text" className="form-control" placeholder="City" name="city"/>
+                <input type="text" className="form-control" placeholder="City" name="city"
+                       value={city} onChange={e => handleChange(e, setCity)}/>
+              </div>
+            </div>
+          </div>
+          <br/>
+          <div className="row">
+            <div className="col-lg-6">
+              {!zipValid && <div className="alert alert-danger">
+                Please enter a 5-digit zipcode
+              </div>}
+              <div className="input-group">
+                <input type="text" className="form-control" placeholder="Zip" name="zip"
+                       value={zip} onChange={checkZipCodeValidity}
+                       required pattern="[0-9]{5}"/>
+              </div>
+            </div>
+            <div className="col-lg-6">
+              <div className="input-group">
+                <input type="text" className="form-control" placeholder="State" name="state"
+                       value={state} onChange={e => handleChange(e, setState)}/>
               </div>
             </div>
           </div>
@@ -49,20 +88,8 @@ export function CheckoutForm() {
           <div className="row">
             <div className="col-lg-6">
               <div className="input-group">
-                <input type="text" className="form-control" placeholder="Zip" name="zip"/>
-              </div>
-            </div>
-            <div className="col-lg-6">
-              <div className="input-group">
-                <input type="text" className="form-control" placeholder="State" name="state"/>
-              </div>
-            </div>
-          </div>
-          <br/>
-          <div className="row">
-            <div className="col-lg-6">
-              <div className="input-group">
-                <input type="password" className="form-control" placeholder="Credit card number" name="cc" required/>
+                <input type="password" className="form-control" placeholder="Credit card number" name="cc"
+                       required value={cc} onChange={e => handleChange(e, setCc)}/>
               </div>
             </div>
             <div className="col-lg-6">
