@@ -7,7 +7,10 @@ export function LicensePlate(props) {
 
 	return (
 			<>
-				<h2>{plate.title}</h2>
+				<h2>
+					{plate.title}
+					{plate.onSale && <img src="/sale.png" className="sale" alt="On sale" />}
+				</h2>
 				<img src={plate.picture} className="img-fluid" alt={plate.title} />
 				<p>{plate.description}</p>
 				<div>
