@@ -22,7 +22,7 @@ function normalize(value) {
  * How many rows the page paints. This is the knob: if your laptop is fast
  * enough that the lag below is not obvious, turn it up.
  */
-const VISIBLE_ROWS = 1000;
+const VISIBLE_ROWS = 10000;
 
 function search(plates, query) {
 	const needle = normalize(query);
