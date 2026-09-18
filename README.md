@@ -33,6 +33,10 @@ two labs:
   is given (lab **TS1**);
 - the **Add to cart** button does nothing (lab **CC3**).
 
+Prices are formatted with `Intl.NumberFormat`, and the currency can be pinned from the
+URL — `http://localhost:3000/?currency=EUR`. Nothing validates that code, which is the
+starting point of lab **EB1**.
+
 ## Code labs
 
 Most labs are done **in the app itself**: you edit a file you already know, and a worked
@@ -42,7 +46,8 @@ solution sits beside it under the same name plus `.solution`.
 |---|---|---|
 | TS1 — typing the Jumbotron | `src/jumbotron/Jumbotron.js` → `.tsx` | `src/jumbotron/Jumbotron.solution.tsx` |
 | HK1 — the cart hook, with `useReducer` | `src/cart-service/cart-hook.ts` | `cart-hook.solution.ts` (+ `cart-hook.solution.test.ts`) |
-| EB1 — catching a render crash | you create `src/cart-view/ErrorBoundary.js` | `src/cart-view/ErrorBoundary.solution.js` |
+| EB1 — catching a render crash | you create `src/error-boundary/ErrorBoundary.js` | `src/error-boundary/ErrorBoundary.solution.js` |
+| CX1 — the currency, without prop drilling | you create `src/currency/currency-context.js` | `src/currency/currency-context.solution.js` |
 | RC1 — keys and reconciliation | `src/cart-view/CartView.js` | `src/cart-view/CartView.keys.solution.js` |
 | PERF1 — diagnose and fix the search page | `src/search-view/SearchView.js` | `SearchView.solution.js` (+ `PlateRow.solution.js`) |
 

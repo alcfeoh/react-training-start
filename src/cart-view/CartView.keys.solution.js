@@ -55,7 +55,7 @@ export function CartViewKeysSolution(props) {
 							style={{backgroundColor: (index % 2 === 0) ? '#F5F5F5' : ''}}
 						>
 							<LicensePlate
-								currencySymbol={props.currencySymbol}
+								currency={props.currency}
 								plate={licensePlate}
 								buttonText="Remove from cart &times;"
 							/>

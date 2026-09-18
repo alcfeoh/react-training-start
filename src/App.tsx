@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import {BrowserRouter, Route, Routes} from 'react-router-dom';
 import './App.css';
 import {Navigation} from './navigation/Navigation';
@@ -6,7 +6,6 @@ import {StoreView} from './store-view/StoreView';
 import {CartView} from './cart-view/CartView';
 import {CheckoutView} from './checkout-view/CheckoutView';
 import {SearchView} from './search-view/SearchView';
-import {getCurrencySymbols} from './license-plate/LicensePlate.service';
 
 /**
  * The license plate store, assembled: navigation in the app shell, three
@@ -21,14 +20,11 @@ import {getCurrencySymbols} from './license-plate/LicensePlate.service';
  */
 export function App() {
 
-	const [currency, setCurrency] = useState('USD');
-	const [symbols, setSymbols] = useState<Record<string, string>>({});
-
-	useEffect(() => {
-		getCurrencySymbols().then(setSymbols);
-	}, []);
-
-	const currencySymbol = symbols[currency] ?? '';
+	// The currency can be pinned from the URL: /?currency=EUR. Nothing
+	// validates it - that is lab EB1.
+	const [currency, setCurrency] = useState(
+		() => new URLSearchParams(window.location.search).get('currency') ?? 'USD'
+	);
 
 	return (
 		<BrowserRouter>
@@ -36,8 +32,8 @@ export function App() {
 				<Navigation currency={currency} onCurrencyChange={setCurrency}/>
 				<main role="main">
 					<Routes>
-						<Route path="/" element={<StoreView currencySymbol={currencySymbol}/>}/>
-						<Route path="/cart" element={<CartView currencySymbol={currencySymbol}/>}/>
+						<Route path="/" element={<StoreView currency={currency}/>}/>
+						<Route path="/cart" element={<CartView currency={currency}/>}/>
 						<Route path="/checkout" element={<CheckoutView/>}/>
 						<Route path="/search" element={<SearchView/>}/>
 					</Routes>

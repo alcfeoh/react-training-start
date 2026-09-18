@@ -6,7 +6,7 @@ import {Spinner} from '../spinner/Spinner';
 import {LicensePlateData} from '../license-plate-data.type';
 
 export interface StoreViewProps {
-	currencySymbol: string;
+	currency: string;
 }
 
 /**
@@ -62,7 +62,7 @@ export function StoreView(props: StoreViewProps) {
 						>
 							<LicensePlate
 								plate={plate}
-								currencySymbol={props.currencySymbol}
+								currency={props.currency}
 								buttonText="Add to cart"
 							/>
 						</div>
