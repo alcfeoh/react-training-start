@@ -6,6 +6,7 @@ import {StoreView} from './store-view/StoreView';
 import {CartView} from './cart-view/CartView';
 import {CheckoutView} from './checkout-view/CheckoutView';
 import {CurrencyDropdown} from './currency/CurrencyDropdown';
+import {PromoBanner} from './promo-banner/PromoBanner';
 import {getCurrencySymbols} from './license-plate/LicensePlate.service';
 
 /**
@@ -50,6 +51,9 @@ export function App() {
 										title="License plates"
 										description="Rare plates from all fifty states"
 									/>
+									<div className="container">
+										<PromoBanner/>
+									</div>
 									<StoreView currencySymbol={currencySymbol}/>
 								</>
 							}
