@@ -26,6 +26,7 @@ solution sits beside it under the same name plus `.solution`.
 
 | Lab | You edit | Solution |
 |---|---|---|
+| TS1 — typing the Jumbotron | `src/jumbotron/Jumbotron.js` → `.tsx` | `src/jumbotron/Jumbotron.solution.tsx` |
 | HK1 — the cart hook, with `useReducer` | `src/cart-service/cart-hook.ts` | `cart-hook.solution.ts` (+ `cart-hook.solution.test.ts`) |
 | EB1 — catching a render crash | you create `src/cart-view/ErrorBoundary.js` | `src/cart-view/ErrorBoundary.solution.js` |
 | RC1 — keys and reconciliation | `src/cart-view/CartView.js` | `src/cart-view/CartView.keys.solution.js` |
