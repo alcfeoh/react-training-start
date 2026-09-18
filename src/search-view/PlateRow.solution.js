@@ -3,7 +3,7 @@ import React, { memo } from 'react';
 /**
  * memo() alone is not enough: it only helps if the props keep the same
  * identity from one render to the next. See the useMemo / useCallback
- * calls in PlateSearch.solution.js.
+ * calls in SearchView.solution.js.
  */
 export const PlateRow = memo(function PlateRow({ plate, currency, onAddToCart }) {
   return (

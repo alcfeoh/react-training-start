@@ -1,22 +1,11 @@
-# Code challenge: Diagnose and fix
+# Lab PERF1 — Diagnose and fix
 
-Support for the performance chapter. Everything here is self-contained: no other
-lab file is touched, so this can be run at any point in the training.
+The search page lives at **http://localhost:3000/search**, reachable from the
+**Search** link in the navigation bar. Nothing to mount, nothing to comment out:
+start the app as usual and go to the page.
 
-## Running it
-
-Render `PlateSearch` from `App.tsx` (and put your own `App` content back
-afterwards):
-
-```jsx
-import { PlateSearch } from './perf-lab/PlateSearch';
-
-export function App() {
-  return <PlateSearch />;
-}
-```
-
-Then `npm run dev` (or `npm start`) and type in the search box. It stutters.
+`plates.js` expands the 15 plates of `mock-data.js` into a 4000-entry catalog,
+so nothing is fetched — the page works with the backend server stopped.
 
 ## The challenge
 
@@ -27,9 +16,9 @@ Then `npm run dev` (or `npm start`) and type in the search box. It stutters.
 3. Fix it, then record again and compare the commit durations.
 
 **BONUS:** turn the React Compiler on and delete the manual memoization you
-just added. This repo is on React 19, so the compiler does not need a
-separate `react-compiler-runtime` package — enable `babel-plugin-react-compiler`
-through `@vitejs/plugin-react` if you want a 5-minute demo.
+just added. This repo is on React 19, so the compiler does not need a separate
+`react-compiler-runtime` package — enable `babel-plugin-react-compiler` through
+`@vitejs/plugin-react` if you want a 5-minute demo.
 
 ## What is actually wrong (trainer notes)
 
@@ -44,10 +33,5 @@ Three separate problems, deliberately stacked:
 Note the order: `memo()` on `PlateRow` alone changes **nothing** until the props
 keep a stable identity. That is the point worth making on the day.
 
-The worked solution is in `solution/` — `PlateSearch.solution.js` and
-`PlateRow.solution.js`, with the three fixes numbered in the comments.
-
-## Data
-
-`plates.js` expands the 15 plates of `mock-data.js` into a 4000-entry catalog.
-Nothing is fetched, so the lab works offline and without the backend server.
+The worked solution is in `SearchView.solution.js` and `PlateRow.solution.js`,
+with the three fixes numbered in the comments.

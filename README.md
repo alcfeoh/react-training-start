@@ -23,8 +23,8 @@ See [React Training set-up document](https://bit.ly/at-react-setup) for instruct
 
 `npm install`, `npm run server` (the API, port 8000), `npm start` (the app, port 3000).
 
-The store is assembled and running: a `Navigation` bar in the app shell, three routes
-(`/`, `/cart`, `/checkout`), a Jumbotron in each view, the plates loaded from the API
+The store is assembled and running: a `Navigation` bar in the app shell, four routes
+(`/`, `/search`, `/cart`, `/checkout`), a Jumbotron in each view, the plates loaded from the API
 (with a sale badge when `onSale` is true), a controlled checkout form, and the currency
 lifted up to `App.tsx`. Two things are left undone on purpose, and they are the first
 two labs:
@@ -44,10 +44,14 @@ solution sits beside it under the same name plus `.solution`.
 | HK1 — the cart hook, with `useReducer` | `src/cart-service/cart-hook.ts` | `cart-hook.solution.ts` (+ `cart-hook.solution.test.ts`) |
 | EB1 — catching a render crash | you create `src/cart-view/ErrorBoundary.js` | `src/cart-view/ErrorBoundary.solution.js` |
 | RC1 — keys and reconciliation | `src/cart-view/CartView.js` | `src/cart-view/CartView.keys.solution.js` |
+| PERF1 — diagnose and fix the search page | `src/search-view/SearchView.js` | `SearchView.solution.js` (+ `PlateRow.solution.js`) |
 
-Four labs are self-contained instead, because each needs data or a setup of its own:
-`src/perf-lab/` (profiling), `src/state-lab/` (Zustand), `src/authorization-service/` (auth)
-— each with its own README — and the Playwright lab in `e2e/`.
+PERF1 runs on its own page, `/search`, built from a generated 4000-plate catalog so it
+needs no backend — see `src/search-view/README.md` for the trainer notes.
+
+Two labs are self-contained instead, because each needs a setup of its own:
+`src/state-lab/` (Zustand) and `src/authorization-service/` (auth) — each with its own
+README — plus the Playwright lab in `e2e/`.
 
 ## CI
 

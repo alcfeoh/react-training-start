@@ -32,14 +32,13 @@ export function Navigation(props) {
 						<Link className="nav-link" to="/cart">My cart</Link>
 					</li>
 					<li className="nav-item">
+						<Link className="nav-link" to="/search">Search</Link>
+					</li>
+					<li className="nav-item">
 						<Link className="nav-link" to="/checkout">Checkout</Link>
 					</li>
 				</ul>
 				<CurrencyDropdown currency={props.currency} onCurrencyChange={props.onCurrencyChange}/>
-				<form className="form-inline my-2 my-lg-0" onSubmit={(event) => event.preventDefault()}>
-					<input className="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search"/>
-					<button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-				</form>
 			</div>
 		</nav>
 	);
