@@ -1,3 +1,8 @@
+/* Dark navbar is position:fixed; keep page content from sliding under it. */
+body {
+  padding-top: 3.5rem;
+}
+
 .App-header {
   background-color: #ffffff;
   font-size: 100px;
