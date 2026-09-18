@@ -10,17 +10,19 @@ import {PlateRow} from './PlateRow';
  * The worked version is in SearchView.solution.js.
  */
 
-/**
- * Accent- and case-insensitive normalisation.
- * Correct, but not cheap: Unicode normalisation allocates a new string
- * and walks it twice.
- */
+/** Accent- and case-insensitive. Correct, but it allocates a new string and walks it twice. */
 function normalize(value) {
 	return String(value)
 		.normalize('NFD')
 		.replace(/[̀-ͯ]/g, '')
 		.toLowerCase();
 }
+
+/**
+ * How many rows the page paints. This is the knob: if your laptop is fast
+ * enough that the lag below is not obvious, turn it up.
+ */
+const VISIBLE_ROWS = 1000;
 
 function search(plates, query) {
 	const needle = normalize(query);
@@ -56,7 +58,7 @@ export function SearchView() {
 
 				<input
 					className="form-control mb-3"
-					placeholder="Search 4000 plates..."
+					placeholder="Search 20 000 plates..."
 					aria-label="Search plates"
 					value={query}
 					onChange={(event) => setQuery(event.target.value)}
@@ -67,7 +69,7 @@ export function SearchView() {
 				</p>
 
 				<ul className="list-group">
-					{results.slice(0, 100).map((plate) => (
+					{results.slice(0, VISIBLE_ROWS).map((plate) => (
 						<PlateRow
 							key={plate._id}
 							plate={plate}

@@ -18,6 +18,12 @@ function normalize(value) {
 		.toLowerCase();
 }
 
+/**
+ * How many rows the page paints. This is the knob: if your laptop is fast
+ * enough that the lag below is not obvious, turn it up.
+ */
+const VISIBLE_ROWS = 1000;
+
 function search(plates, query) {
 	const needle = normalize(query);
 	if (!needle) {
@@ -61,7 +67,7 @@ export function SearchViewSolution() {
 
 				<input
 					className="form-control mb-3"
-					placeholder="Search 4000 plates..."
+					placeholder="Search 20 000 plates..."
 					aria-label="Search plates"
 					value={query}
 					onChange={(event) => setQuery(event.target.value)}
@@ -72,7 +78,7 @@ export function SearchViewSolution() {
 				</p>
 
 				<ul className="list-group" style={{opacity: isStale ? 0.6 : 1}}>
-					{results.slice(0, 100).map((plate) => (
+					{results.slice(0, VISIBLE_ROWS).map((plate) => (
 						<PlateRow
 							key={plate._id}
 							plate={plate}
@@ -97,4 +103,18 @@ export function SearchViewSolution() {
  * Adding memoization everywhere "just in case" is how people conclude that
  * React optimisation does not work. Measure, find the identity that is
  * breaking, fix that one.
+ *
+ * WHY useDeferredValue EARNS ITS PLACE HERE
+ *
+ * Because the expensive part is a thousand components, and React can stop
+ * between components to let a keystroke through. Move the same cost into one
+ * long synchronous function and useDeferredValue buys you almost nothing -
+ * React cannot interrupt a function that is already running. Worth knowing
+ * before reaching for it.
+ *
+ * AND THE HONEST CAVEAT
+ *
+ * The real fix for a thousand-row list is to not render a thousand rows:
+ * window it. This lab is about seeing where the time goes and what each tool
+ * actually buys, not an argument for memoizing your way out of a bad list.
  */

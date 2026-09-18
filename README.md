@@ -46,7 +46,7 @@ solution sits beside it under the same name plus `.solution`.
 | RC1 — keys and reconciliation | `src/cart-view/CartView.js` | `src/cart-view/CartView.keys.solution.js` |
 | PERF1 — diagnose and fix the search page | `src/search-view/SearchView.js` | `SearchView.solution.js` (+ `PlateRow.solution.js`) |
 
-PERF1 runs on its own page, `/search`, built from a generated 4000-plate catalog so it
+PERF1 runs on its own page, `/search`, built from a generated 20 000-plate catalog so it
 needs no backend — see `src/search-view/README.md` for the trainer notes.
 
 Two labs are self-contained instead, because each needs a setup of its own:
