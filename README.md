@@ -23,10 +23,11 @@ See [React Training set-up document](https://bit.ly/at-react-setup) for instruct
 
 `npm install`, `npm run server` (the API, port 8000), `npm start` (the app, port 3000).
 
-The store is assembled and running: a navigation bar, three routes (`/`, `/cart`, `/checkout`),
-the plates loaded from the API (with a sale badge when `onSale` is true), a promo countdown,
-a controlled checkout form, and the currency lifted up to `App.tsx`. Two things are
-left undone on purpose, and they are the first two labs:
+The store is assembled and running: a `Navigation` bar in the app shell, three routes
+(`/`, `/cart`, `/checkout`), a Jumbotron in each view, the plates loaded from the API
+(with a sale badge when `onSale` is true), a controlled checkout form, and the currency
+lifted up to `App.tsx`. Two things are left undone on purpose, and they are the first
+two labs:
 
 - the page headers show **Title** and **Description** — the `Jumbotron` ignores the props it
   is given (lab **TS1**);

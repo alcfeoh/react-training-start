@@ -10,14 +10,6 @@ export function PromoBanner() {
     // Promo is on for 24 hours initially
     const [timeLeft, setTimeLeft] = useState(SECS_IN_DAY);
 
-    useEffect(() => {
-        const id = setInterval(() => {
-            setTimeLeft(time => time - 1);
-        }, 1000);
-
-        return () => clearInterval(id);
-    }, []);
-
     return (
         <div className="alert alert-warning" role="alert">
             Our promo sale is ON for the next {toHourMinSec(timeLeft)}
