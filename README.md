@@ -19,6 +19,18 @@ See [React Training set-up document](https://bit.ly/at-react-setup) for instruct
 | `npm run e2e` | Run Playwright end-to-end tests |
 | `npm run e2e:ui` | Open the Playwright UI |
 
+## Starting point of the advanced course
+
+`npm install`, `npm run server` (the API, port 8000), `npm start` (the app, port 3000).
+
+The store is assembled and running: a navigation bar, three routes (`/`, `/cart`, `/checkout`),
+the plates loaded from the API, and the currency lifted up to `App.tsx`. Two things are
+left undone on purpose, and they are the first two labs:
+
+- the page headers show **Title** and **Description** — the `Jumbotron` ignores the props it
+  is given (lab **TS1**);
+- the **Add to cart** button does nothing (lab **CC3**).
+
 ## Code labs
 
 Most labs are done **in the app itself**: you edit a file you already know, and a worked

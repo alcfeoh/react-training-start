@@ -1,6 +1,7 @@
 import React from "react";
 
-export function Jumbotron() {
+// Lab TS1 - this component is handed a title and a description, and ignores both.
+export function Jumbotron(props) {
 
     return (
         <div className="jumbotron">

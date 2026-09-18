@@ -17,7 +17,7 @@ export function CartView(props) {
 		rows = cartContents.map((licensePlate, index) => {
 			return (
 				<div key={licensePlate._id} className="col-md-4" style={{backgroundColor: (index % 2 === 0) ? '#F5F5F5' : ''}}>
-					<LicensePlate currency={props.currency} plate={licensePlate} buttonText="Remove from cart &times;" />
+					<LicensePlate currencySymbol={props.currencySymbol} plate={licensePlate} buttonText="Remove from cart &times;" />
 				</div>
 			);
 		});
