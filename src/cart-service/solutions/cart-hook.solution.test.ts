@@ -1,6 +1,6 @@
 import {describe, expect, it} from 'vitest';
 import {cartReducer, CartState} from './cart-hook.solution';
-import {LicensePlateData} from '../license-plate-data.type';
+import {LicensePlateData} from '../../license-plate-data.type';
 
 /**
  * The payoff of moving the cart to a reducer: the interesting logic is now a

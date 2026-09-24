@@ -1,6 +1,6 @@
 import {useEffect, useReducer} from "react";
-import {addToCart, getCartContents, removeFromCart} from "./cart-service";
-import {LicensePlateData} from '../license-plate-data.type';
+import {addToCart, getCartContents, removeFromCart} from "../cart-service";
+import {LicensePlateData} from '../../license-plate-data.type';
 
 /**
  * Lab HK1 - the cart hook, rewritten with useReducer.
