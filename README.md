@@ -67,5 +67,5 @@ Pull requests and pushes to `master` run GitHub Actions: `npm ci`, typecheck, pr
 This starter is a Vite + React 19 TypeScript app with `strict` enabled.
 
 - **`.tsx` required props are checked.** If a TypeScript component declares required props and another `.tsx` file omits them, `npm run typecheck` and `npm run build` fail. `skipLibCheck` and `allowJs` do not turn that off.
-- **`.js` lab files are not type-checked.** `allowJs` is on so labs can stay `.js` without renaming. `checkJs` is off, so an untyped `.js` component (for example `LicensePlate.js`) will not report missing props when you call it from TypeScript.
+- **`.js` lab files are not type-checked.** `allowJs` is on so labs can stay `.js` without renaming. `checkJs` is off, so an untyped `.js` component (for example `LicensePlate.jsx`) will not report missing props when you call it from TypeScript.
 - **Vite overlay.** `npm start` / `npm run dev` use `vite-plugin-checker` so missing required props also show in the terminal and the browser overlay.

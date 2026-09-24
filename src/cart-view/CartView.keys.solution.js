@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {LicensePlate} from '../license-plate/LicensePlate';
+import {LicensePlate} from '../license-plate/LicensePlate.jsx';
 import {Jumbotron} from '../jumbotron/Jumbotron';
 import {useCart} from '../cart-service/cart-hook';
 
