@@ -1,7 +1,7 @@
-import {create} from 'zustand';
-import {addToCart, getCartContents, removeFromCart} from "./cart-service.ts";
+import {create, ExtractState} from 'zustand';
+import {addToCart, getCartContents, removeFromCart} from "../cart-service.ts";
 import {combine, devtools} from "zustand/middleware";
-import {LicensePlateData} from "../license-plate-data.type.ts";
+import {LicensePlateData} from "../../license-plate-data.type.ts";
 
 export const useCartStore = create(
 	devtools(
